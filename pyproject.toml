@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "request"
 version = "0.1.0"
-description = "Simple aiohttp app for request debugging"
+description = "Simple aiohttp server for request debugging"
 authors = ["Vlad Dmitrievich <me@2tunnels.com>"]
 license = "MIT"
 
