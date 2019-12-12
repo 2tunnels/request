@@ -4,21 +4,22 @@ from aiohttp import web
 
 
 async def handler(request: web.Request) -> web.Response:
-    headers = dict(request.headers)
-    query = dict(request.query)
+    headers = dict(request.headers) or None
+    query = dict(request.query) or None
 
-    body = await request.text()
-    post = dict(await request.post())
+    body = await request.text() or None
+    post = dict(await request.post()) or None
 
     try:
         json = await request.json()
     except JSONDecodeError:
-        json = {}
+        json = None
 
     return web.json_response({
         'method': request.method,
         'version': request.version,
         'host': request.host,
+        'path': request.path,
         'headers': headers,
         'query': query,
         'body': body,
@@ -29,6 +30,6 @@ async def handler(request: web.Request) -> web.Response:
 
 app = web.Application()
 app.add_routes([
-    web.route('*', '/', handler),
+    web.route('*', '/{path:.*}', handler),
 ])
 web.run_app(app)
