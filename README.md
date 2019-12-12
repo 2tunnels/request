@@ -1,4 +1,4 @@
-# request
+# requestd
 
 Simple [aiohttp](https://aiohttp.readthedocs.io/en/stable/) server for request debugging.
 
@@ -7,7 +7,7 @@ Simple [aiohttp](https://aiohttp.readthedocs.io/en/stable/) server for request d
 Build:
 
 ```bash
-docker image build -t request .
+docker image build -t requestd .
 ```
 
 Run:
@@ -19,13 +19,13 @@ docker container run -p 8080:8080 request
 Tag:
 
 ```bash
-docker image tag request "2tunnels/request:latest"
-docker image tag request "2tunnels/request:$(date +"%Y.%m.%d")-$(git rev-parse --short HEAD)"
+docker image tag requestd "2tunnels/requestd:latest"
+docker image tag requestd "2tunnels/requestd:$(date +"%Y.%m.%d")-$(git rev-parse --short HEAD)"
 ```
 
 Push:
 
 ```bash
-docker image push "2tunnels/request:latest"
-docker image push "2tunnels/request:$(date +"%Y.%m.%d")-$(git rev-parse --short HEAD)"
+docker image push "2tunnels/requestd:latest"
+docker image push "2tunnels/requestd:$(date +"%Y.%m.%d")-$(git rev-parse --short HEAD)"
 ```

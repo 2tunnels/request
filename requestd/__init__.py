@@ -32,4 +32,3 @@ app = web.Application()
 app.add_routes([
     web.route('*', '/{path:.*}', handler),
 ])
-web.run_app(app)
