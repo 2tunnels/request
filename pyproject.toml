@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "requestd"
-version = "0.1.0"
+version = "0.1.1"
 description = "Simple aiohttp server for request debugging"
 authors = ["Vlad Dmitrievich <me@2tunnels.com>"]
 license = "MIT"

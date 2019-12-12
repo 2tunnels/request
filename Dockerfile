@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["./run"]
+CMD ["./run.py"]
