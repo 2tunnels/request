@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: requestd
+  labels:
+    app: requestd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: requestd
+  template:
+    metadata:
+      labels:
+        app: requestd
+    spec:
+      containers:
+        - name: requestd
+          image: 2tunnels/requestd:0.1.1
+          ports:
+            - containerPort: 8080
