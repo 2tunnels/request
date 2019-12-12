@@ -1,12 +1,29 @@
+from json.decoder import JSONDecodeError
+
 from aiohttp import web
 
 
 async def handler(request: web.Request) -> web.Response:
+    headers = dict(request.headers)
+    query = dict(request.query)
+
+    body = await request.text()
+    post = dict(await request.post())
+
+    try:
+        json = await request.json()
+    except JSONDecodeError:
+        json = {}
+
     return web.json_response({
         'method': request.method,
-        'headers': dict(request.headers),
-        'query': dict(request.query),
-        'post': dict(await request.post()),
+        'version': request.version,
+        'host': request.host,
+        'headers': headers,
+        'query': query,
+        'body': body,
+        'post': post,
+        'json': json,
     })
 
 
