@@ -12,6 +12,7 @@ cchardet = "^2.1"
 aiodns = "^2.0"
 
 [tool.poetry.dev-dependencies]
+pytest-aiohttp = "^0.3.0"
 
 [build-system]
 requires = ["poetry>=0.12"]

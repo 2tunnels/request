@@ -28,7 +28,10 @@ async def handler(request: web.Request) -> web.Response:
     })
 
 
-app = web.Application()
-app.add_routes([
-    web.route('*', '/{path:.*}', handler),
-])
+def create_application() -> web.Application:
+    app = web.Application()
+    app.add_routes([
+        web.route('*', '/{path:.*}', handler),
+    ])
+
+    return app
