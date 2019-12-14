@@ -52,7 +52,7 @@ Response:
 Run:
 
 ```bash
-docker container run -p 8080:8080 2tunnels/requestd:0.1.1
+docker container run -p 8080:8080 2tunnels/requestd
 ```
 
 ## Kubernetes

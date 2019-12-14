@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: requestd
-          image: 2tunnels/requestd:0.1.1
+          image: 2tunnels/requestd
           ports:
             - containerPort: 8080
