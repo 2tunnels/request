@@ -47,6 +47,28 @@ Response:
 }
 ```
 
+## Docker
+
+Run:
+
+```bash
+docker container run -p 8080:8080 2tunnels/requestd:0.1.1
+```
+
+## Kubernetes
+
+Create `requestd` deployment:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/2tunnels/requestd/master/k8s/deployment.yaml
+```
+
+Create `requestd` service:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/2tunnels/requestd/master/k8s/service.yaml
+```
+
 ## Development
 
 Clone:
@@ -71,30 +93,4 @@ Run:
 
 ```bash
 ./run.py
-```
-
-## Docker
-
-Build:
-
-```bash
-docker image build -t requestd .
-```
-
-Run:
-
-```bash
-docker container run -p 8080:8080 request
-```
-
-Tag:
-
-```bash
-docker image tag requestd "2tunnels/requestd:latest" && docker image tag requestd "2tunnels/requestd:0.1.1"
-```
-
-Push:
-
-```bash
-docker image push "2tunnels/requestd:latest" && docker image push "2tunnels/requestd:0.1.1"
 ```
