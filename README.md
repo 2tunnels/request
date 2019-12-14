@@ -1,5 +1,7 @@
 # requestd
 
+[![Build Status](https://travis-ci.org/2tunnels/requestd.svg?branch=master)](https://travis-ci.org/2tunnels/requestd)
+
 Simple [aiohttp](https://aiohttp.readthedocs.io/en/stable/) server for request debugging.
 
 ## Example
